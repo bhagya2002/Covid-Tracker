@@ -17,7 +17,7 @@ html {
     font-size: 16px;
 }
 
-/* to hide the element */
+/* to hide any elements */
 .hide {
     display: none;
 }
@@ -42,6 +42,7 @@ html {
 header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     max-width: 1200px;
     width: 100%;
@@ -52,6 +53,43 @@ header {
     background-color: #f3f2f2;
 }
 
+/* logo */
 .logo {
     display: flex;
+    align-items: center;
+    padding-left: 20px;
+    flex: 1;
+}
+
+/* image styles inside logo div */
+.logo img {
+    width: 60px;
+}
+
+/* paragraph styles inside logo div */
+.logo p {
+    font-weight: bold;
+    color: #6a149b;
+}
+
+/* navigation styles */
+nav {}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li:last-child {
+    padding-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #6a149b;
+    padding: 10px;
 }
