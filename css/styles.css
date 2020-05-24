@@ -93,3 +93,17 @@ nav ul li a {
     color: #6a149b;
     padding: 10px;
 }
+
+/* main */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* background images */
+.stats {
+    width: 100%;
+    height: 600px;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+}
