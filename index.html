@@ -9,66 +9,91 @@
 </head>
 
 <body>
+    <!-- header (top-section) -->
     <header>
+        <!-- left side logo plus the title of the project -->
         <div class="logo">
+            <!-- logo -->
             <img src="img/logo.png" alt="covid logo">
+            <!-- title -->
             <p>COVID-19<br />Tracker</p>
         </div>
-
+        <!-- nav bar on the right side of the top -->
         <nav>
             <ul>
+                <!-- options in the navigation bar -->
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- main section of the projects -->
     <main>
+        <!-- the whole ACTUAL body -->
         <div class="stats">
+            <!-- statistics -->
             <div class="latest-report">
+                <!-- shows the country that the data is presenting -->
                 <div class="country">
+                    <!-- name of the country -->
                     <div class="name">Loading...</div>
+                    <!-- option to change the country -->
                     <div class="change-country">change</div>
-                    <div class="search-country">
+                    <!-- search for a country menu -->
+                    <div class="search-country hide">
+                        <!-- search div for the country (input and close "button") -->
                         <div class="search-box">
                             <input type="text" id="seach-input" placeholder="Search Country...">
                             <img class="close" src="./img/close.svg" alt="close search menu">
                         </div>
+                        <!-- all the countries -->
                         <div class="country-list">
-                            <ul id="list-1">
-                                <li>UK</li>  
-                            </ul>
-                            <ul id="list-2">
-                                <li>UK</li>  
-                            </ul>
-                            <ul id="list-3">
-                                <li>UK</li>  
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+                        </div> <!-- end of the country search list -->
+                    </div> <!-- search for a country end div -->
+                </div> <!-- country end div -->
+
+                <!-- the total # of cases in the country selected -->
                 <div class="total-cases">
                     <div class="title">Total Cases</div>
                     <div class="value">0</div>
                     <div class="new-value">+0</div>
-                </div>
+                </div> <!-- end tag for total cases div -->
+                <!-- the total # of recovered cases in the country selected -->
                 <div class="recovered">
                     <div class="title">Recovered</div>
                     <div class="value">0</div>
                     <div class="new-value">+0</div>
-                </div>
+                </div><!-- end tag for recovered div -->
+                <!-- the total # of deaths in the country selected -->
                 <div class="deaths">
                     <div class="title">Deaths</div>
                     <div class="value">0</div>
                     <div class="new-value">+0</div>
-                </div>
+                </div> <!-- end tag for deaths div -->
+            </div> <!-- end tag for the numbers section -->
 
-            </div>
+            <!-- the chart that shows the data retreived from the API -->
             <div class="chart">
                 <canvas id="axes-linear-chart"></canvas>
+            </div> <!-- end of canvas tag -->
+        </div> <!-- main body end tag -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="copyright">
+                <p>Copyright © 2020 Bhagya Patel</p>
             </div>
         </div>
-    </main>
+
+    </footer>
+
+    <!-- JS files -->
+    <script src="js/countries.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 
