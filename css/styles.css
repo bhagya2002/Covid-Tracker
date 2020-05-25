@@ -24,7 +24,7 @@ html {
 
 /* fade in animation */
 .fadeIn {
-    animation: fade 0.5s ease-in-out;
+    animation: fade 0.4s ease-in-out;
 }
 
 /* animation for Fading In */
