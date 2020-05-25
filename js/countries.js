@@ -818,7 +818,7 @@ const search_country_element = document.querySelector(".search-country");
 const country_list_element = document.querySelector(".country-list");
 const chang_country_btn = document.querySelector(".change-country");
 const close_list_btn = document.querySelector(".close");
-const input = document.getElementById('search-input');
+const input = document.querySelector('input');
 
 // create the country list
 function createCountryList() {
@@ -851,6 +851,26 @@ chang_country_btn.addEventListener("click", function () {
     search_country_element.classList.toggle("hide");
     search_country_element.classList.add("fadeIn");
 });
+
 close_list_btn.addEventListener("click", function () {
     search_country_element.classList.toggle("hide");
 });
+
+// filter the countries when one is searched in the input field
+input.addEventListener("input", function () {
+    let value = input.value.toUpperCase();
+    country_list.forEach(country => {
+        if (country.name.toUpperCase().startsWith(value)) {
+            document.getElementById(country.name).classList.remove("hide");
+        } else {
+            document.getElementById(country.name).classList.add("hide");
+        }
+    })
+})
+
+// reset to show all the countries in the list
+function resetCountryList() {
+    country_list.forEach(country => {
+        document.getElementById(country.name).classList.remove("hide");
+    })
+}
