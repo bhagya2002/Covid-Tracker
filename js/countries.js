@@ -842,17 +842,23 @@ function createCountryList() {
     })
 }
 
-let num_of_ul_lists = 3;
+let num_of_ul_lists = 2;
 createCountryList();
 
 
-// show/hide the country list
+// SHOW/HIDE THE COUTRY LIST ON CLICK EVENT
 chang_country_btn.addEventListener("click", function () {
+    input.value = "";
+    resetCountryList();
     search_country_element.classList.toggle("hide");
     search_country_element.classList.add("fadeIn");
 });
 
 close_list_btn.addEventListener("click", function () {
+    search_country_element.classList.toggle("hide");
+});
+
+country_list_element.addEventListener("click", function () {
     search_country_element.classList.toggle("hide");
 });
 
