@@ -110,7 +110,7 @@ main {
 
 .parallax {
     /* The image used */
-    background-image: url("/img/net.jpg");
+    background-image: url("/img/covid.jpg");
 
     /* Set a specific height */
     min-height: 450px;
@@ -121,28 +121,12 @@ main {
     background-repeat: no-repeat;
     /* background-position: 5% 0%; */
     background-size: cover;
-    background-size: 60%;
+    background-size: 90%;
 }
 
 .parallax1 {
     /* The image used */
-    background-image: url("/img/covid.jpg");
-
-    /* Set a specific height */
-    min-height: 250px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* background-position: 5% 0%; */
-    background-size: cover;
-    background-size: 60%;
-}
-
-.parallax2 {
-    /* The image used */
-    background-image: url("/img/covidpic1.jpg");
+    background-image: url("/img/net.jpg");
 
     /* Set a specific height */
     min-height: 400px;
@@ -161,7 +145,7 @@ main {
     background-image: url("/img/covidpic1.jpg");
 
     /* Set a specific height */
-    min-height: 450px;
+    min-height: 250px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -188,8 +172,37 @@ main {
     background-size: 60%;
 }
 
+.covid-about {
+    justify-content: space-between;
+    align-items: center;
 
+    width: 87.2%;
+    height: 100%;
+    padding-bottom: 25px;
+    margin: 0 auto;
+    padding-top: 50px;
 
+    background-color: black;
+
+    color: #be64f1;
+    font-size: 36px;
+}
+
+.covid-about-title {
+    font-size: 1.3em;
+    padding-bottom: 5px;
+}
+
+hr {
+    width: 12%;
+}
+
+.covid-about-content {
+    padding-top: 25px;
+
+    font-size: 0.7em;
+    color: #fff;
+}
 
 /* footer styles */
 footer {
