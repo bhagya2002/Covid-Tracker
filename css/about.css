@@ -1,0 +1,225 @@
+/* load fonts */
+@font-face {
+    font-family: 'Gilroy';
+    src: url(./Gilroy-Regular.woff)format(woff);
+}
+
+/* general styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy', sans-serif;
+}
+
+/* entire screen  */
+html {
+    font-size: 16px;
+}
+
+/* to hide any elements */
+.hide {
+    display: none;
+}
+
+/* fade in animation */
+.fadeIn {
+    animation: fade 0.4s ease-in-out;
+}
+
+/* animation for Fading In */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* header styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1200px;
+    width: 100%;
+    height: 60px;
+
+    margin: 0 auto;
+
+    background-color: #f3f2f2;
+}
+
+/* logo */
+.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    flex: 1;
+}
+
+/* image styles inside logo div */
+.logo img {
+    width: 60px;
+}
+
+/* paragraph styles inside logo div */
+.logo p {
+    font-weight: bold;
+    color: #6a149b;
+}
+
+/* navigation styles */
+nav {}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li:last-child {
+    padding-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #6a149b;
+    padding: 10px;
+}
+
+/* main */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* background images */
+.stats {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+    background-size: cover;
+}
+
+
+.parallax {
+    /* The image used */
+    background-image: url("/img/net.jpg");
+
+    /* Set a specific height */
+    min-height: 450px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-position: 5% 0%; */
+    background-size: cover;
+    background-size: 60%;
+}
+
+.parallax1 {
+    /* The image used */
+    background-image: url("/img/covid.jpg");
+
+    /* Set a specific height */
+    min-height: 250px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-position: 5% 0%; */
+    background-size: cover;
+    background-size: 60%;
+}
+
+.parallax2 {
+    /* The image used */
+    background-image: url("/img/covidpic1.jpg");
+
+    /* Set a specific height */
+    min-height: 400px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-position: 5% 0%; */
+    background-size: cover;
+    background-size: 60%;
+}
+
+.parallax2 {
+    /* The image used */
+    background-image: url("/img/covidpic1.jpg");
+
+    /* Set a specific height */
+    min-height: 450px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-position: 5% 0%; */
+    background-size: cover;
+    background-size: 60%;
+}
+
+.parallax3 {
+    /* The image used */
+    background-image: url("/img/logo.png");
+
+    /* Set a specific height */
+    min-height: 1000px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-position: 5% 0%; */
+    background-size: cover;
+    background-size: 60%;
+}
+
+
+
+
+/* footer styles */
+footer {
+    max-width: 1200px;
+    height: 60px;
+
+    margin: 0 auto;
+
+    background-color: #6a149b;
+}
+
+/* justify the footer content horizontally */
+.footer-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* justify the footer content vetically using flex-direction */
+.copyright {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* the color of the text */
+.copyright p {
+    color: #fff;
+}
+
+/* whats happens when the screen becomes smaller */
+@media screen and (max-width: 600px) {}
