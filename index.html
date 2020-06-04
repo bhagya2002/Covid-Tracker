@@ -4,139 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="8;url=http://covidtrackr.000webhostapp.com/about.html">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Covid-19 Tracker</title>
 </head>
 
-<style>
-    /* universal */
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    /* main body */
-    body {
-        width: 100%;
-        height: 100vh;
-
-        font-size: 3em;
-
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    /* the welcome text */
-    #logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        animation: filler 0.5s ease forwards 5s;
-    }
-
-    /* each letter */
-    #logo path:nth-child(2) {
-        stroke-dasharray: 801.1425170898438;
-        stroke-dashoffset: 801.1425170898438;
-
-        animation: lines-animation 2s ease forwards 0.2s;
-    }
-
-
-    #logo path:nth-child(3) {
-        stroke-dasharray: 463.968017578125;
-        stroke-dashoffset: 463.968017578125;
-
-        animation: lines-animation 2s ease forwards 0.8s;
-    }
-
-    #logo path:nth-child(4) {
-        stroke-dasharray: 297.2159729003906;
-        stroke-dashoffset: 297.2159729003906;
-
-        animation: lines-animation 2s ease forwards 1.0s;
-    }
-
-    #logo path:nth-child(5) {
-        stroke-dasharray: 508.55181884765625;
-        stroke-dashoffset: 508.55181884765625;
-
-        animation: lines-animation 2s ease forwards 1.3s;
-    }
-
-    #logo path:nth-child(6) {
-        stroke-dasharray: 565.9512329101562;
-        stroke-dashoffset: 565.9512329101562;
-
-        animation: lines-animation 2s ease forwards 1.6s;
-    }
-
-    #logo path:nth-child(7) {
-        stroke-dasharray: 754.9266357421875;
-        stroke-dashoffset: 754.9266357421875;
-
-        animation: lines-animation 2s ease forwards 1.9s;
-    }
-
-    #logo path:nth-child(8) {
-        stroke-dasharray: 463.96795654296875;
-        stroke-dashoffset: 463.96795654296875;
-
-        animation: lines-animation 2s ease forwards 2.2s;
-    }
-
-    /* outline plus glow animation */
-    @keyframes lines-animation {
-        to {
-            stroke-dashoffset: 0;
-            stroke-width: 0.4px;
-
-            fill: #cf88f7;
-        }
-    }
-</style>
-
 <body>
-    <!-- welcome SVG with paths (each letter) -->
-    <svg id="logo" width="1000" min-width="400" height="114" viewBox="0 0 700 114" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <mask id="path-1-outside-1" maskUnits="userSpaceOnUse" x="0.312012" y="0.335999" width="699" height="113"
-            fill="black">
-            <rect fill="white" x="0.312012" y="0.335999" width="699" height="113" />
-            <path
-                d="M141.232 6.632L112.144 107H97.456L74.128 26.216L49.936 107L35.392 107.144L7.31201 6.632H21.28L43.168 91.736L67.36 6.632H82.048L105.088 91.448L127.12 6.632H141.232Z" />
-            <path
-                d="M168.676 17.288V50.84H205.252V61.64H168.676V96.2H209.572V107H155.572V6.488H209.572V17.288H168.676Z" />
-            <path d="M242.505 96.344H277.641V107H229.401V6.632H242.505V96.344Z" />
-            <path
-                d="M286.661 56.744C286.661 46.952 288.869 38.168 293.285 30.392C297.701 22.52 303.701 16.376 311.285 11.96C318.965 7.544 327.461 5.336 336.773 5.336C347.717 5.336 357.269 7.976 365.429 13.256C373.589 18.536 379.541 26.024 383.285 35.72H367.589C364.805 29.672 360.773 25.016 355.493 21.752C350.309 18.488 344.069 16.856 336.773 16.856C329.765 16.856 323.477 18.488 317.909 21.752C312.341 25.016 307.973 29.672 304.805 35.72C301.637 41.672 300.053 48.68 300.053 56.744C300.053 64.712 301.637 71.72 304.805 77.768C307.973 83.72 312.341 88.328 317.909 91.592C323.477 94.856 329.765 96.488 336.773 96.488C344.069 96.488 350.309 94.904 355.493 91.736C360.773 88.472 364.805 83.816 367.589 77.768H383.285C379.541 87.368 373.589 94.808 365.429 100.088C357.269 105.272 347.717 107.864 336.773 107.864C327.461 107.864 318.965 105.704 311.285 101.384C303.701 96.968 297.701 90.872 293.285 83.096C288.869 75.32 286.661 66.536 286.661 56.744Z" />
-            <path
-                d="M448.295 108.008C438.983 108.008 430.487 105.848 422.807 101.528C415.127 97.112 409.031 91.016 404.519 83.24C400.103 75.368 397.895 66.536 397.895 56.744C397.895 46.952 400.103 38.168 404.519 30.392C409.031 22.52 415.127 16.424 422.807 12.104C430.487 7.688 438.983 5.48 448.295 5.48C457.703 5.48 466.247 7.688 473.927 12.104C481.607 16.424 487.655 22.472 492.071 30.248C496.487 38.024 498.695 46.856 498.695 56.744C498.695 66.632 496.487 75.464 492.071 83.24C487.655 91.016 481.607 97.112 473.927 101.528C466.247 105.848 457.703 108.008 448.295 108.008ZM448.295 96.632C455.303 96.632 461.591 95 467.159 91.736C472.823 88.472 477.239 83.816 480.407 77.768C483.671 71.72 485.303 64.712 485.303 56.744C485.303 48.68 483.671 41.672 480.407 35.72C477.239 29.672 472.871 25.016 467.303 21.752C461.735 18.488 455.399 16.856 448.295 16.856C441.191 16.856 434.855 18.488 429.287 21.752C423.719 25.016 419.303 29.672 416.039 35.72C412.871 41.672 411.287 48.68 411.287 56.744C411.287 64.712 412.871 71.72 416.039 77.768C419.303 83.816 423.719 88.472 429.287 91.736C434.951 95 441.287 96.632 448.295 96.632Z" />
-            <path
-                d="M617.802 7.352V107H604.698V32.696L571.578 107H562.362L529.098 32.552V107H515.994V7.352H530.106L566.97 89.72L603.834 7.352H617.802Z" />
-            <path d="M653.13 17.288V50.84H689.706V61.64H653.13V96.2H694.026V107H640.026V6.488H694.026V17.288H653.13Z" />
-        </mask>
-        <path
-            d="M141.232 6.632L112.144 107H97.456L74.128 26.216L49.936 107L35.392 107.144L7.31201 6.632H21.28L43.168 91.736L67.36 6.632H82.048L105.088 91.448L127.12 6.632H141.232Z"
-            stroke="#be64f1" stroke-width="13" mask="url(#path-1-outside-1)" />
-        <path d="M168.676 17.288V50.84H205.252V61.64H168.676V96.2H209.572V107H155.572V6.488H209.572V17.288H168.676Z"
-            stroke="#be64f1" stroke-width="13" mask="url(#path-1-outside-1)" />
-        <path d="M242.505 96.344H277.641V107H229.401V6.632H242.505V96.344Z" stroke="#be64f1" stroke-width="13"
-            mask="url(#path-1-outside-1)" />
-        <path
-            d="M286.661 56.744C286.661 46.952 288.869 38.168 293.285 30.392C297.701 22.52 303.701 16.376 311.285 11.96C318.965 7.544 327.461 5.336 336.773 5.336C347.717 5.336 357.269 7.976 365.429 13.256C373.589 18.536 379.541 26.024 383.285 35.72H367.589C364.805 29.672 360.773 25.016 355.493 21.752C350.309 18.488 344.069 16.856 336.773 16.856C329.765 16.856 323.477 18.488 317.909 21.752C312.341 25.016 307.973 29.672 304.805 35.72C301.637 41.672 300.053 48.68 300.053 56.744C300.053 64.712 301.637 71.72 304.805 77.768C307.973 83.72 312.341 88.328 317.909 91.592C323.477 94.856 329.765 96.488 336.773 96.488C344.069 96.488 350.309 94.904 355.493 91.736C360.773 88.472 364.805 83.816 367.589 77.768H383.285C379.541 87.368 373.589 94.808 365.429 100.088C357.269 105.272 347.717 107.864 336.773 107.864C327.461 107.864 318.965 105.704 311.285 101.384C303.701 96.968 297.701 90.872 293.285 83.096C288.869 75.32 286.661 66.536 286.661 56.744Z"
-            stroke="#be64f1" stroke-width="13" mask="url(#path-1-outside-1)" />
-        <path
-            d="M448.295 108.008C438.983 108.008 430.487 105.848 422.807 101.528C415.127 97.112 409.031 91.016 404.519 83.24C400.103 75.368 397.895 66.536 397.895 56.744C397.895 46.952 400.103 38.168 404.519 30.392C409.031 22.52 415.127 16.424 422.807 12.104C430.487 7.688 438.983 5.48 448.295 5.48C457.703 5.48 466.247 7.688 473.927 12.104C481.607 16.424 487.655 22.472 492.071 30.248C496.487 38.024 498.695 46.856 498.695 56.744C498.695 66.632 496.487 75.464 492.071 83.24C487.655 91.016 481.607 97.112 473.927 101.528C466.247 105.848 457.703 108.008 448.295 108.008ZM448.295 96.632C455.303 96.632 461.591 95 467.159 91.736C472.823 88.472 477.239 83.816 480.407 77.768C483.671 71.72 485.303 64.712 485.303 56.744C485.303 48.68 483.671 41.672 480.407 35.72C477.239 29.672 472.871 25.016 467.303 21.752C461.735 18.488 455.399 16.856 448.295 16.856C441.191 16.856 434.855 18.488 429.287 21.752C423.719 25.016 419.303 29.672 416.039 35.72C412.871 41.672 411.287 48.68 411.287 56.744C411.287 64.712 412.871 71.72 416.039 77.768C419.303 83.816 423.719 88.472 429.287 91.736C434.951 95 441.287 96.632 448.295 96.632Z"
-            stroke="#be64f1" stroke-width="13" mask="url(#path-1-outside-1)" />
-        <path
-            d="M617.802 7.352V107H604.698V32.696L571.578 107H562.362L529.098 32.552V107H515.994V7.352H530.106L566.97 89.72L603.834 7.352H617.802Z"
-            stroke="#be64f1" stroke-width="13" mask="url(#path-1-outside-1)" />
-        <path d="M653.13 17.288V50.84H689.706V61.64H653.13V96.2H694.026V107H640.026V6.488H694.026V17.288H653.13Z"
-            stroke="#be64f1" stroke-width="13" mask="url(#path-1-outside-1)" />
-    </svg>
+    <!-- header (top-section) -->
+    <header>
+        <!-- left side logo plus the title of the project -->
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <!-- logo -->
+                <img src="img/logo.png" alt="covid logo">
+                <!-- title -->
+                <p>COVID-19<br />Tracker</p>
+            </div>
+        </a>
+        <!-- nav bar on the right side of the top -->
+        <nav>
+            <ul>
+                <!-- options in the navigation bar -->
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- main section of the projects -->
+    <main>
+        <!-- the whole ACTUAL body -->
+        <div class="stats">
+            <!-- statistics -->
+            <div class="latest-report">
+                <!-- shows the country that the data is presenting -->
+                <div class="country">
+                    <!-- name of the country -->
+                    <div class="name">Loading...</div>
+                    <!-- option to change the country -->
+                    <div class="change-country">change</div>
+                    <!-- search for a country menu -->
+                    <div class="search-country hide">
+                        <!-- search div for the country (input and close "button") -->
+                        <div class="search-box">
+                            <input type="text" id="seach-input" placeholder="Search Country...">
+                            <img class="close" src="./img/close.svg" alt="close search menu">
+                        </div>
+                        <!-- all the countries -->
+                        <div class="country-list">
+
+                        </div> <!-- end of the country search list -->
+                    </div> <!-- search for a country end div -->
+                </div> <!-- country end div -->
+
+                <!-- the total # of cases in the country selected -->
+                <div class="total-cases">
+                    <div class="title">Total Cases</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div> <!-- end tag for total cases div -->
+                <!-- the total # of recovered cases in the country selected -->
+                <div class="recovered">
+                    <div class="title">Recovered</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div><!-- end tag for recovered div -->
+                <!-- the total # of deaths in the country selected -->
+                <div class="deaths">
+                    <div class="title">Deaths</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div> <!-- end tag for deaths div -->
+            </div> <!-- end tag for the numbers section -->
+
+            <!-- the chart that shows the data retreived from the API -->
+            <div class="chart">
+                <canvas id="axes-linear-chart"></canvas>
+            </div> <!-- end of canvas tag -->
+        </div> <!-- main body end tag -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="copyright">
+                <p>Copyright © 2020 Bhagya Patel</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- JS files -->
+    <!-- chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <!-- geoloaction of user -->
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <!-- self made files -->
+    <script src="js/countries.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 
