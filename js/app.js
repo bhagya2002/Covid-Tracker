@@ -37,40 +37,40 @@ function fetchData(user_country) {
 	cases_list = [], recovered_list = [], deaths_list = [], dates = [], formatedDates = [];
 
 	// fetch from API
-	// fetch(`https://covid19-monitor-pro.p.rapidapi.com/coronavirus/cases_by_days_by_country.php?country=${user_country}`, {
-	// 		"method": "GET",
-	// 		"headers": {
-	// 			"x-rapidapi-host": "covid19-monitor-pro.p.rapidapi.com",
-	// 			"x-rapidapi-key": "11f9888308msh1a247f9e34000b6p1c316fjsned0bcd69a910"
-}
-})
-// only when this is connected and data is retireved then run this (promise)
-.then(response => {
-		return response.json();
-	})
-	// only when the API responds to the users call this will run and gets the data in an Object class (promise)
-	.then(data => {
-		dates = Object.keys(data);
-
-		// remove the commas from the numbers and push them into the array
-		dates.forEach(date => {
-			let DATA = data[date];
-
-			formatedDates.push(formatDate(date));
-			app_data.push(DATA)
-			cases_list.push(parseInt(DATA.total_cases.replace(/,/g, "")));
-			recovered_list.push(parseInt(DATA.total_recovered.replace(/,/g, "")));
-			deaths_list.push(parseInt(DATA.total_deaths.replace(/,/g, "")));
+	fetch(`https://covid19-monitor-pro.p.rapidapi.com/coronavirus/cases_by_days_by_country.php?country=${user_country}`, {
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "covid19-monitor-pro.p.rapidapi.com",
+				"x-rapidapi-key": "11f9888308msh1a247f9e34000b6p1c316fjsned0bcd69a910"
+			}
 		})
-	})
-	// after the data is stored in an array then update front-end (promise)
-	.then(() => {
-		updateUI();
-	})
-	// catch the errors in the fetch statment and code after it runs
-	.catch(error => {
-		alert(error);
-	})
+		// only when this is connected and data is retireved then run this (promise)
+		.then(response => {
+			return response.json();
+		})
+		// only when the API responds to the users call this will run and gets the data in an Object class (promise)
+		.then(data => {
+			dates = Object.keys(data);
+
+			// remove the commas from the numbers and push them into the array
+			dates.forEach(date => {
+				let DATA = data[date];
+
+				formatedDates.push(formatDate(date));
+				app_data.push(DATA)
+				cases_list.push(parseInt(DATA.total_cases.replace(/,/g, "")));
+				recovered_list.push(parseInt(DATA.total_recovered.replace(/,/g, "")));
+				deaths_list.push(parseInt(DATA.total_deaths.replace(/,/g, "")));
+			})
+		})
+		// after the data is stored in an array then update front-end (promise)
+		.then(() => {
+			updateUI();
+		})
+		// catch the errors in the fetch statment and code after it runs
+		.catch(error => {
+			alert(error);
+		})
 }
 
 // set parameter
